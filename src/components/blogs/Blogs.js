@@ -20,5 +20,5 @@ export default class Blogs extends PureComponent {
 
 
 Blogs.defaultProps = {
-    blogs: [{title: "another one"}]
+    blogs: [{title: "another blog"}]
 }

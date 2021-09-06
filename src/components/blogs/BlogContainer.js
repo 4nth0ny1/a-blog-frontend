@@ -4,7 +4,7 @@ import BlogForm from './BlogForm'
 import { Route, Switch } from 'react-router-dom'
 import Blog from './Blog'
 import {connect} from 'react-redux'
-import fetchBlogs from './actions/fetchBlogs'
+import fetchBlogs from '../../actions/blogs/fetchBlogs'
 
 class BlogContainer extends PureComponent {
 

@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import addBlog from './actions/addBlog'
-import editBlog from './actions/editBlog'
+import addBlog from '../../actions/blogs/addBlog'
+import editBlog from '../../actions/blogs/editBlog'
 
 class BlogForm extends Component {
 
@@ -16,7 +16,6 @@ class BlogForm extends Component {
             id: this.props.blog ? this.props.blog.id : ""
         }
     }
-
 
     handleSubmit(event) {
         event.preventDefault()
