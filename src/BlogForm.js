@@ -25,7 +25,7 @@ class BlogForm extends Component {
         } else {
             this.props.editBlog(this.state)
         }
-        this.setState({ title: "", id: "", content: "", signature: "", rank: 0 })
+        this.setState({ id: "", title: "", content: "", signature: "", rank: 0 })
         this.props.history.push('/blogs')
     }
 
@@ -39,8 +39,8 @@ class BlogForm extends Component {
             return (
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.title} name="title"/>
-                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.content} name="title"/>
-                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.signature} name="title"/>
+                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.content} name="content"/>
+                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.signature} name="signature"/>
                     <input type="submit"/>
                 </form>
             )
@@ -50,7 +50,7 @@ class BlogForm extends Component {
         // debugger
         return (
             <>
-            {this.redirectOrRenderForm()}
+                {this.redirectOrRenderForm()}
             </>
         )
     }

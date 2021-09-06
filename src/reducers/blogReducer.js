@@ -1,5 +1,4 @@
-  
-export default function blogReducer(state, action){
+  export default function blogReducer(state, action){
     switch(action.type){
         case "FETCH_BLOGS":
             return {
@@ -7,7 +6,7 @@ export default function blogReducer(state, action){
             }
         case "ADD_BLOG":
             return {
-                blogs: [...state.blogs, action.payload]
+                blogs: [...state.blog, action.payload]
             }
         case "DELETE_BLOG":
             const newBlog = state.blogs.filter(blog => blog.id !== action.payload)

@@ -8,11 +8,9 @@ import fetchBlogs from './actions/fetchBlogs'
 
 class BlogContainer extends PureComponent {
 
-
     componentDidMount(){
         this.props.fetchBlogs()
     }
-
 
     render(){
         
