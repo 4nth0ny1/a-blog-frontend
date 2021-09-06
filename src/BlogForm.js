@@ -10,6 +10,9 @@ class BlogForm extends Component {
         super(props)
         this.state = {
             title: this.props.blog ? this.props.blog.title : "",
+            content: this.props.blog ? this.props.blog.content : "",
+            signature: this.props.blog ? this.props.blog.signature : "",
+            rank: this.props.blog ? this.props.blog.rank : 0,
             id: this.props.blog ? this.props.blog.id : ""
         }
     }
@@ -22,7 +25,7 @@ class BlogForm extends Component {
         } else {
             this.props.editBlog(this.state)
         }
-        this.setState({ title: "", id: "" })
+        this.setState({ title: "", id: "", content: "", signature: "", rank: 0 })
         this.props.history.push('/blogs')
     }
 
@@ -36,6 +39,8 @@ class BlogForm extends Component {
             return (
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.title} name="title"/>
+                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.content} name="title"/>
+                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.signature} name="title"/>
                     <input type="submit"/>
                 </form>
             )
