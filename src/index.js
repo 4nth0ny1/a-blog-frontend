@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom'
-import { createStore, compose, applyMiddleware, combineReducers } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
 import blogReducer from './reducers/blogReducer';
 import subjectReducer from './reducers/subjectReducer';
 import { composeWithDevTools } from 'redux-devtools-extension'
@@ -17,9 +17,10 @@ const store = createStore(
   compose(applyMiddleware(thunk), composeWithDevTools())
 )
 
+const initialSubjectState = []
 const subjectStore = createStore( 
   subjectReducer, 
-  initialState, 
+  initialSubjectState, 
   compose(applyMiddleware(thunk), composeWithDevTools())
 )
 

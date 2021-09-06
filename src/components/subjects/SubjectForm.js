@@ -43,7 +43,6 @@ class SubjectForm extends Component {
     }
 
     render() {
-        // debugger
         return (
             <>
                 {this.redirectOrRenderForm()}
