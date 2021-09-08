@@ -1,5 +1,4 @@
-
-  export default function blogReducer(state, action){
+const blogReducer = (state = { blogs: [] }, action) => {
     switch(action.type){
         case "FETCH_BLOGS":
             return {
@@ -24,3 +23,5 @@
     }
 
 }
+
+export default blogReducer

@@ -1,5 +1,5 @@
 
-  export default function subjectReducer(state, action){
+  const subjectReducer = (state = { subjects: [] } , action) => {
     switch(action.type){
         case "FETCH_SUBJECTS":
             return {
@@ -24,3 +24,5 @@
     }
 
 }
+
+export default subjectReducer;
