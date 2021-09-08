@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 import fetchBlogs from '../../actions/blogs/fetchBlogs'
 
 class BlogContainer extends PureComponent {
-
+    
     componentDidMount(){
         this.props.fetchBlogs()
     }
@@ -30,11 +30,18 @@ class BlogContainer extends PureComponent {
     }
 }
 
-const mapStateToProps = ({ blogs }) => {
+const mapStateToProps = state => {
     return {
-        blogs 
+        blogs: state.blogs
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    
+    return {
+        fetchBlogs: () => dispatch(fetchBlogs())
     }
 }
 
 
-export default connect(mapStateToProps, {fetchBlogs})(BlogContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(BlogContainer)

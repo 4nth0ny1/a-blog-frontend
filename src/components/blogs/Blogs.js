@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export default class Blogs extends PureComponent {
 
     render(){
+        
         return (
             <ul>
                 {this.props.blogs.map((blog) => 
@@ -17,7 +18,6 @@ export default class Blogs extends PureComponent {
         )
     }
 }
-
 
 Blogs.defaultProps = {
     blogs: [{title: "another blog"}]
