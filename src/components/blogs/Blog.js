@@ -12,8 +12,9 @@ function Blog(props){
 
     return (
     <>
-        <li>{props.blog && props.blog.title}<button onClick={handleClick}>Delete</button></li>
         <BlogForm blog={props.blog}/>
+        <li>{props.blog && props.blog.title}<button onClick={handleClick}>Delete</button></li>
+
     </>
     )
 }
