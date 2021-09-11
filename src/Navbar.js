@@ -12,7 +12,6 @@ export default function Navbar(props){
             <br></br>
             <Link to="/blogs/new">New Blog</Link>
             <br></br>
-            <a href="/blogs">Refresh</a>
         </nav>
     )
 }

@@ -19,6 +19,7 @@ const blogReducer = (state = { blogs: [] }, action) => {
             return {
                 blogs: editBlog
             }
+        
         default: 
             return state
     }

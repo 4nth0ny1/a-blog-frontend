@@ -7,6 +7,8 @@ import allReducers from './reducers/index'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import {Provider} from 'react-redux'
 import thunk from "redux-thunk"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const store = createStore( 
   allReducers,
