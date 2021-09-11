@@ -30,11 +30,18 @@ class SubjectContainer extends PureComponent {
     }
 }
 
-const mapStateToProps = ({ subjects }) => {
+const mapStateToProps = state => {
     return {
-        subjects 
+        subjects: state.subject.subjects
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchSubjects: () => dispatch(fetchSubjects())
     }
 }
 
 
-export default connect(mapStateToProps, {fetchSubjects})(SubjectContainer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(SubjectContainer)

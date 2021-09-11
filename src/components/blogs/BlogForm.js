@@ -35,18 +35,26 @@ class BlogForm extends Component {
         })
     }
 
+    sortedSubjects = this.props.subjects.sort((a,b) => a.topic.toLowerCase() > b.topic.toLowerCase() ? 1 : -1 )
+
     redirectOrRenderForm = () => {
         return (
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.title} name="title"/>
-                <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.content} name="content"/>
-                <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.signature} name="signature"/>
+                <input type="text" onChange={(event) => this.handleChange(event)}  placeholder="title" value={this.state.title} name="title"/>
+                <input type="text" onChange={(event) => this.handleChange(event)}  placeholder="content" value={this.state.content} name="content"/>
+                <input type="text" onChange={(event) => this.handleChange(event)} placeholder="signature" value={this.state.signature} name="signature"/>
+                <select name="subject_id" onChange={(event) =>this.handleChange(event)}>
+                    {this.sortedSubjects.map ( subject => 
+                        <option key={subject.id} value={subject.id}>{subject.topic}</option>
+                    )}
+                </select>
                 <input type="submit"/>
             </form>
         )
     }
 
     render() {
+
         return (
             <>
                 {this.redirectOrRenderForm()}
@@ -55,4 +63,10 @@ class BlogForm extends Component {
     }
 }
 
-export default withRouter(connect(null, { addBlog, editBlog })(BlogForm))
+const mapStateToProps = state => {
+    return {
+        subjects: state.subject.subjects 
+    }
+}
+
+export default withRouter(connect(mapStateToProps, { addBlog, editBlog })(BlogForm))

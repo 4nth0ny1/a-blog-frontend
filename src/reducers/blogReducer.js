@@ -6,10 +6,10 @@ const blogReducer = (state = { blogs: [] }, action) => {
             }
         case "ADD_BLOG":
             return {
-                blogs: [...state.blog, action.payload]
+                blogs: [...state.blogs, action.payload]
             }
         case "DELETE_BLOG":
-            debugger
+            
             const newBlog = state.blogs.filter(blog => blog.id !== action.payload)
             return {
                 blogs: newBlog
@@ -22,7 +22,6 @@ const blogReducer = (state = { blogs: [] }, action) => {
         default: 
             return state
     }
-
 }
 
 export default blogReducer

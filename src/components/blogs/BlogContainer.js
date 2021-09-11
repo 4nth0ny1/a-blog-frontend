@@ -32,7 +32,7 @@ class BlogContainer extends PureComponent {
 
 const mapStateToProps = state => {
     return {
-        blogs: state.blogs
+        blogs: state.blog.blogs // blog.blogs - blog is the key from allReducers 
     }
 }
 

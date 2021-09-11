@@ -7,7 +7,7 @@
             }
         case "ADD_SUBJECT":
             return {
-                subjects: [...state.subject, action.payload]
+                subjects: [...state.subjects, action.payload]
             }
         case "DELETE_SUBJECT":
             const newSubject = state.subjects.filter(subject => subject.id !== action.payload)

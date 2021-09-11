@@ -7,13 +7,18 @@ export default class Blogs extends PureComponent {
         
         return (
             <ul>
-                {this.props.blogs.map((blog) => 
-                <Link to={`/blogs/${blog.id}`}>
-                    <li>{blog.title}</li>
-                    <li>{blog.content}</li>
-                    <li>{blog.signature}</li>
-                    <li>{blog.rank}</li>
-                </Link>)}
+                {this.props.blogs.map((blog) =>
+                <React.Fragment key={blog.id}>
+                    <Link to={`/blogs/${blog.id}`}>
+                        <li>Title: {blog.title}</li>
+                        <li>Content: {blog.content}</li>
+                        <li>Description: {blog.signature}</li>
+                        <li>Rank: {blog.rank}</li>
+                        <li>Subject: {blog.subject.topic}</li>
+                        <br></br>
+                    </Link>
+                </React.Fragment>
+                )}
             </ul>
         )
     }
