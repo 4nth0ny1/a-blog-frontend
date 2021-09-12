@@ -105,3 +105,19 @@
 .comment-container {
   text-align: right !important;
 }
+
+.blog-page-container {
+  width: 800px;
+  margin: 20px auto;
+}
+
+.blog-page-content {
+  margin-top: 20px;
+}
+
+.blog-page-comment-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}

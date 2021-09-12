@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import editBlog from '../../actions/blogs/editBlog'
 import Button from 'react-bootstrap/Button';
 import App from '../../App.css';
-import CommentContainer from '../comments/CommentContainer'
 
 class Blogs extends PureComponent {
 
@@ -50,7 +49,7 @@ class Blogs extends PureComponent {
                                     <p>Subject: {blog.subject.topic}</p>
                                     <p class="date">updated last: {blog.last_updated_at}</p>
                                     <br></br>
-                                  
+       
                                 {blog.comments.map((comment) => 
                                     <React.Fragment key={comment.id}>
                                         <div class="comment-container">

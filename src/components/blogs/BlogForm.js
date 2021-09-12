@@ -17,8 +17,8 @@ class BlogForm extends Component {
             rank: this.props.blog ? this.props.blog.rank : 0,
             id: this.props.blog ? this.props.blog.id : "", 
             subject_id: this.props.blog ? this.props.blog.subject_id : "", 
-            formatted_created_at: this.props.blog.formattedCreatedAt,
-            last_updated_at: this.props.blog.lastUpdatedAt
+            formatted_created_at: this.props.blog ? this.props.blog.formattedCreatedAt : "",
+            // last_updated_at: this.props.blog ? this.props.blog.lastUpdatedAt : ""
         }
     }
 
@@ -29,7 +29,8 @@ class BlogForm extends Component {
         } else {
             this.props.editBlog(this.state)
         }
-        this.setState({ id: "", title: "", content: "", signature: "", rank: 0, subject_id: "", formatted_created_at: this.props.blog.formattedCreatedAt, last_updated_at: this.props.blog.lastUpdatedAt })
+        this.setState({ id: "", title: "", content: "", signature: "", rank: 0, subject_id: "", formatted_created_at: this.props.blog.formattedCreatedAt})
+        // this.setState({ id: "", title: "", content: "", signature: "", rank: 0, subject_id: "", formatted_created_at: this.props.blog.formattedCreatedAt, last_updated_at: this.props.blog.lastUpdatedAt })
         this.props.history.push('/blogs')
     }
 
