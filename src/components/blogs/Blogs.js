@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import editBlog from '../../actions/blogs/editBlog'
 import Button from 'react-bootstrap/Button';
 import App from '../../App.css';
+import CommentContainer from '../comments/CommentContainer'
 
 class Blogs extends PureComponent {
 
@@ -24,7 +25,9 @@ class Blogs extends PureComponent {
                 id: id, 
                 rank: rank - 1
             })
-        }        
+        }     
+        
+        
 
         return (
             <>
