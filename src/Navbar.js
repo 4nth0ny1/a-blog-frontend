@@ -26,30 +26,36 @@ export default function NavbarFunction(props){
     return (
      
         <Navbar class="navbar-container" bg="dark" variant="dark" expand="lg">
-            <Navbar.Brand href="/blogs">blogs</Navbar.Brand>
+            <div class="nav-title">
+                <Navbar.Brand class="navbar-brand" href="/blogs">blogs</Navbar.Brand>
+            </div>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
-                <Nav
-                className="mr-auto my-2 my-lg-0"
-                style={{ maxHeight: '100px' }}
-                navbarScroll
-                >
-                    <Nav.Link href="/subjects">subjects</Nav.Link>
-                    <Nav.Link href="/subjects/new">new subject</Nav.Link>
-                    <Nav.Link href="/blogs/new">new blog</Nav.Link>
-                    <Nav.Link href="#" disabled>
-                        Link
-                    </Nav.Link>
-                </Nav>
-                <Form className="d-flex">
-                    <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="mr-2"
-                        aria-label="Search"
-                    />
-                    <Button variant="outline-light">Search</Button>
-                </Form>
+                <div class="nav-form">
+                    <Form className="d-flex">
+                        <FormControl
+                            type="search"
+                            placeholder="Search"
+                            className="mr-2"
+                            aria-label="Search"
+                        />
+                        <Button variant="outline-light">Search</Button>
+                    </Form>
+                </div>
+                <div class="nav-links">
+                    <Nav
+                    className="mr-auto my-2 my-lg-0"
+                    style={{ maxHeight: '100px' }}
+                    navbarScroll
+                    >
+                        <Nav.Link href="/subjects">subjects</Nav.Link>
+                        <Nav.Link href="/subjects/new">new subject</Nav.Link>
+                        <Nav.Link href="/blogs/new">new blog</Nav.Link>
+                        <Nav.Link href="#" disabled>
+                            Link
+                        </Nav.Link>
+                    </Nav>
+                </div>
             </Navbar.Collapse>
         </Navbar>
 
