@@ -43,13 +43,23 @@ class Blogs extends PureComponent {
                             <div class="blog-content-container">
                                 <Link to={`/blogs/${blog.id}`}>
                                     <h2>{blog.title}</h2>
+                                </Link> 
                                     <p class="date">created on: {blog.formatted_created_at}</p>
                                     <p>{blog.content}</p>
                                     <p>Created by: {blog.signature}</p>
                                     <p>Subject: {blog.subject.topic}</p>
                                     <p class="date">updated last: {blog.last_updated_at}</p>
                                     <br></br>
-                                </Link>
+                                  
+                                {blog.comments.map((comment) => 
+                                    <React.Fragment key={comment.id}>
+                                        <div class="comment-container">
+                                            <p>{comment.content}</p>
+                                            <p>{comment.signature}</p>
+                                            <p>{comment.rank}</p>
+                                        </div>
+                                    </React.Fragment>
+                                )}
                             </div>
                         </div>
                     </React.Fragment>

@@ -83,7 +83,7 @@
 }
 
 .blog-content-container {
-  width: 60%;
+  width: 100%;
   color: white;
   padding: 20px;
 }
@@ -100,4 +100,8 @@
 .date {
   font-style: italic;
   font-size: 12px;
+}
+
+.comment-container {
+  text-align: right !important;
 }
