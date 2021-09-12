@@ -37,3 +37,50 @@
   }
 }
 
+.navbar-container {
+  display: flex;
+  justify-content: space-evenly !important;
+}
+
+.blog-container {
+  margin-top: 20px !important;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  background: #212529;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.blog-button-container {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  border-right: 1px solid white;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-button-container > button {
+  border: 1px solid white;
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+.blog-content-container {
+  width: 60%;
+  color: white;
+  padding: 20px;
+}
+
+.blog-content-container > a {
+  color: white;
+  text-decoration: none;
+}
+
+.date {
+  font-style: italic;
+  font-size: 12px;
+}

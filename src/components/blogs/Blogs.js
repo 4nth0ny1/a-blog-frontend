@@ -4,11 +4,7 @@ import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
 import editBlog from '../../actions/blogs/editBlog'
 import Button from 'react-bootstrap/Button';
-// import Jumbotron from 'react-bootstrap/Jumbotron';
-// import Container from 'react-bootstrap/Container';
-// import './App.css';
-
-
+import App from '../../App.css';
 
 class Blogs extends PureComponent {
 
@@ -32,30 +28,30 @@ class Blogs extends PureComponent {
 
         return (
             <>
-            {/* <Container>
-                <Jumbotron>
-                    <h1>Blogs</h1>
-                </Jumbotron> */}
                 <ul>
                     {sortedByRank.map((blog) =>
                     <React.Fragment key={blog.id}>
-                        <Link to={`/blogs/${blog.id}`}>
-                            <h2>{blog.title}</h2>
-                            <p>created on: {blog.formatted_created_at}</p>
-                            <p>{blog.content}</p>
-                            <p>Created by: {blog.signature}</p>
-                            <p>Subject: {blog.subject.topic}</p>
-                            <p>updated last: {blog.last_updated_at}</p>
-                            <br></br>
-                        </Link>
-                        <Button variant="primary" onClick={() => handleUpVote(blog.id, blog.rank)}>+</Button>
-                        {blog.rank}
-                        <Button variant="primary" onClick={() => handleDownVote(blog.id, blog.rank)}>-</Button>
-
+                        <div class="blog-container">
+                            <div class="blog-button-container">
+                                <Button variant="dark" onClick={() => handleUpVote(blog.id, blog.rank)}>+</Button>
+                                {blog.rank}
+                                <Button variant="dark" onClick={() => handleDownVote(blog.id, blog.rank)}>-</Button>
+                            </div>
+                            <div class="blog-content-container">
+                                <Link to={`/blogs/${blog.id}`}>
+                                    <h2>{blog.title}</h2>
+                                    <p class="date">created on: {blog.formatted_created_at}</p>
+                                    <p>{blog.content}</p>
+                                    <p>Created by: {blog.signature}</p>
+                                    <p>Subject: {blog.subject.topic}</p>
+                                    <p class="date">updated last: {blog.last_updated_at}</p>
+                                    <br></br>
+                                </Link>
+                            </div>
+                        </div>
                     </React.Fragment>
                     )}
                 </ul>
-            {/* </Container> */}
             </>
         )
     }
