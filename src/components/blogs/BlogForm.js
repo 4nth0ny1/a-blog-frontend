@@ -3,7 +3,6 @@ import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import addBlog from '../../actions/blogs/addBlog'
 import editBlog from '../../actions/blogs/editBlog'
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
@@ -18,7 +17,7 @@ class BlogForm extends Component {
             rank: this.props.blog ? this.props.blog.rank : 0,
             id: this.props.blog ? this.props.blog.id : "", 
             subject_id: this.props.blog ? this.props.blog.subject_id : "", 
-            formatted_created_at: this.props.blog.formattedCreatedAt, 
+            formatted_created_at: this.props.blog.formattedCreatedAt,
             last_updated_at: this.props.blog.lastUpdatedAt
         }
     }
@@ -44,17 +43,19 @@ class BlogForm extends Component {
 
     redirectOrRenderForm = () => {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <Form.Control type="text" onChange={(event) => this.handleChange(event)}  placeholder="title" value={this.state.title} name="title"/>
-                <Form.Control type="text" onChange={(event) => this.handleChange(event)}  placeholder="content" value={this.state.content} name="content"/>
-                <Form.Control type="text" onChange={(event) => this.handleChange(event)} placeholder="signature" value={this.state.signature} name="signature"/>
-                <select name="subject_id" onChange={(event) =>this.handleChange(event)}>
-                    {this.sortedSubjects.map ( subject => 
-                        <option key={subject.id} value={subject.id}>{subject.topic}</option>
-                    )}
-                </select>
-                <input type="submit" />
-            </form>
+            <div class="blog-page-container">
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <Form.Control type="text" onChange={(event) => this.handleChange(event)}  placeholder="title" value={this.state.title} name="title"/>
+                    <Form.Control type="text" onChange={(event) => this.handleChange(event)}  placeholder="content" value={this.state.content} name="content"/>
+                    <Form.Control type="text" onChange={(event) => this.handleChange(event)} placeholder="signature" value={this.state.signature} name="signature"/>
+                    <select name="subject_id" onChange={(event) =>this.handleChange(event)}>
+                        {this.sortedSubjects.map ( subject => 
+                            <option key={subject.id} value={subject.id}>{subject.topic}</option>
+                        )}
+                    </select>
+                    <input type="submit" />
+                </form>
+            </div>
         )
     }
 

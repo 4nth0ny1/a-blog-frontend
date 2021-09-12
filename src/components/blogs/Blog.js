@@ -12,9 +12,10 @@ function Blog(props){
 
     return (
     <>
-        <BlogForm blog={props.blog}/>
-        <li>{props.blog && props.blog.title}<button onClick={handleClick}>Delete</button></li>
-
+        <div class="blog-page-container">
+            <BlogForm blog={props.blog}/>
+            <button onClick={handleClick}>Delete</button>
+        </div>
     </>
     )
 }
