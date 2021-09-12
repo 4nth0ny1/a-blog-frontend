@@ -16,14 +16,14 @@ function Blog(props){
     }
 
     const handleUpVote = (id, rank) => {  
-        this.props.editBlog({
+        props.editBlog({
             id: id, 
             rank: rank + 1
         })
     }       
     
     const handleDownVote = (id, rank) => {  
-        this.props.editBlog({
+        props.editBlog({
             id: id, 
             rank: rank - 1
         })
@@ -72,4 +72,4 @@ function Blog(props){
     )
 }
 
-export default withRouter(connect(null, { deleteBlog })(Blog))
+export default withRouter(connect(null, { editBlog, deleteBlog })(Blog))
