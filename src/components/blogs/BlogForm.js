@@ -47,7 +47,7 @@ class BlogForm extends Component {
             <div class="blog-page-container">
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <Form.Control type="text" onChange={(event) => this.handleChange(event)}  placeholder="title" value={this.state.title} name="title"/>
-                    <Form.Control type="text" onChange={(event) => this.handleChange(event)}  placeholder="content" value={this.state.content} name="content"/>
+                    <Form.Control as="textarea" rows={3} type="text" onChange={(event) => this.handleChange(event)}  placeholder="content" value={this.state.content} name="content"/>
                     <Form.Control type="text" onChange={(event) => this.handleChange(event)} placeholder="signature" value={this.state.signature} name="signature"/>
                     <select name="subject_id" onChange={(event) =>this.handleChange(event)}>
                         {this.sortedSubjects.map ( subject => 

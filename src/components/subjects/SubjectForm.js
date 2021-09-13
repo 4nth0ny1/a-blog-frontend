@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import addSubject from '../../actions/subjects/addSubject'
 import editSubject from '../../actions/subjects/editSubject'
+import Form from 'react-bootstrap/Form';
 
 class SubjectForm extends Component {
 
@@ -34,11 +35,13 @@ class SubjectForm extends Component {
 
     redirectOrRenderForm = () => {
             return (
-                <form onSubmit={this.handleSubmit.bind(this)}>
-                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.topic} name="topic"/>
-                    <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.description} name="description"/>
-                    <input type="submit"/>
-                </form>
+                <div class="blog-page-container">
+                    <form onSubmit={this.handleSubmit.bind(this)}>
+                        <Form.Control type="text" onChange={(event) => this.handleChange(event)} placeholder="topic" value={this.state.topic} name="topic"/>
+                        <Form.Control as="textarea" rows={3} type="text" onChange={(event) => this.handleChange(event)} value={this.state.description} placeholder="description" name="description"/>
+                        <input type="submit"/>
+                    </form>
+                </div>
             )
     }
 

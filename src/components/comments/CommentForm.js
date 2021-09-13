@@ -39,7 +39,7 @@ class CommentForm extends Component {
         return (
             <div class="comment-page-container">
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                    <Form.Control type="text" onChange={(event) => this.handleChange(event)} placeholder="content" value={this.state.content} name="content"/>
+                    <Form.Control as="textarea" rows={3} type="text" onChange={(event) => this.handleChange(event)} placeholder="content" value={this.state.content} name="content"/>
                     <Form.Control type="text" onChange={(event) => this.handleChange(event)} placeholder="signature" value={this.state.signature} name="signature"/>
                     <input type="submit" />
                 </form>
